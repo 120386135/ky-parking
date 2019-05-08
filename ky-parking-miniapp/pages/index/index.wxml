@@ -1,0 +1,39 @@
+<view class='main-box'>
+  <view class='img-box'>
+    <image class='index-img' src='../../images/beat.jpg'>
+    </image>
+  </view>
+  <view class='amazing-box'>
+    <text class='word-a'>今日剩余车位：</text>
+    <view class='surplus-box'>
+      <view class='number'>
+        <view class='number-img'>
+          <image src='../../images/surplus/s-1.png'></image>
+        </view>
+        <view class='number-img'>
+          <image src='../../images/surplus/s-0.png'></image>
+        </view>
+        <view class='number-img'>
+          <image src='../../images/surplus/s-2.png'></image>
+        </view>
+      </view>
+      <!-- <view class='liang'>(辆)</view> -->
+    </view>
+  </view>
+  <view class='appointment-box'>
+    <text class='word-b'>预约停车</text>
+    <view class='manage' bindtap='goParking'>
+      <image class='manage-img' src='../../images/manage.png'></image>
+      <view class='word-parking'>立即预约 · 预约管理</view>
+      <view class='arrow'></view>
+    </view>
+    <view class='parking' bindtap='goManage'>
+      <image class='parking-img' src='../../images/parking.jpg'></image>
+      <view class='word-parking'>地图索引 · 方便快捷</view>
+      <view class='arrow'></view>
+    </view>
+  </view>
+  <view class='bottom-box'>
+    <text class='word-bottom'>关于凯院 · Parking</text>
+  </view>
+</view>
