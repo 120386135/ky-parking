@@ -12,9 +12,9 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.2",
+	"libVersion": "2.6.6",
 	"appid": "wx13acb26409a8bb15",
-	"projectname": "meeting-KLuniversity",
+	"projectname": "test",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -30,24 +30,13 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": -1,
-					"name": "parking",
-					"pathName": "pages/parking/parking",
-					"scene": null
-				}
-			]
+			"current": -1,
+			"list": []
 		}
 	}
 }
