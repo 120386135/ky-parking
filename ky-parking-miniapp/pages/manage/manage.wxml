@@ -1,0 +1,16 @@
+<view class="item-wrapper">
+  <view class='info-box'>
+    <view class="item-list" wx:for="{{itemData}}" wx:key="that">
+      <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}" data-id="{{index}}">
+        <view class="info-wrapper">
+          <text class="name">{{item.car_no}}</text>
+          <text class="info-content">{{item.date}}</text>
+        </view>
+      </view>
+      <view class="item-oper">
+        <view class="oper-xiugai" bindtap="itemDelete" data-index="{{index}}">修改</view>
+        <view class="oper-delete" bindtap="onDel" data-index="{{index}}">取消</view>
+      </view>
+    </view>
+  </view>
+</view>

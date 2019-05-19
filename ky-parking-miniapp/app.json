@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/appointment/appointment",
+    "pages/map/map",
+    "pages/manage/manage"
   ],
   "window": {
     "backgroundTextStyle": "light",

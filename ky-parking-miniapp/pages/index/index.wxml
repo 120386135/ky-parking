@@ -18,25 +18,33 @@
     </view>
   </view>
   <view class="userinfo-box">
-    <view class='userinfo'>
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <block wx:else wx:key>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
+    <view class="back">
+      <view class='userinfo'>
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <block wx:else wx:key>
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+      </view>
     </view>
   </view>
   <view class="row">
-    <navigator wx:for="{{routers}}" url="{{item.url}}?routersid={{item.id}}" wx:key>
+    <navigator wx:for="{{routers}}" hover-class="none" url="{{item.url}}?routersid={{item.id}}" wx:key>
       <view class="item_size">
         <image class="img" src="{{item.icon}}"></image>
         <text class="text">{{item.name}}</text>
       </view>
     </navigator>
   </view>
-  <!-- <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
+  <view class='title-box'>
+    <view class='line-css'></view>
+    <text class='title-word'>停车公告</text>
+    <view class='line-css'></view>
+  </view> 
+    <view class="poster-container">
+      <text class="poster-content">{{content}}在咱们开发微信小程序或者看别人的代码，有时感觉很凌乱，可能让自己多费时间和精力去弄懂，怎么办？android studio和eclipse工具都有格式化的工具，那么微信web开发者工具有此功能么，当然，下面就来试试吧！</text>
+      <text class='date'>2019-5-13</text>
+    </view>
   <view class='bottom-box'>
     <text class='word-bottom'>关于凯院 · Parking</text>
   </view>
