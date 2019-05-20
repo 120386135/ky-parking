@@ -19,6 +19,29 @@ Page({
       dates: e.detail.value
     })
   },
+  formSubmit: function (e) {
+    console.log(e.detail.value.name);
+      wx.request({
+        url: "",
+        data: {
+          "id": e.detail.value.id,
+          'name': e.detail.value.name,
+          'tel': e.detail.value.tel,
+      
+        },
+        method: 'GET',
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          console.log( e.detail.value.name);
+          var code = res.data.code;    
+            wx.redirectTo({
+              url: '../manage/manage',
+            })
+        },
+      })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
