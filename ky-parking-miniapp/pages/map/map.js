@@ -9,7 +9,7 @@ Page({
       longitude: 107.8921580308,
       latitude: 26.5248999648,
       title:"图书馆",
-      iconPath: '../../images/location.png',
+      iconPath: '../../images/map.png',
       width: 32,
       height: 32
     }],
