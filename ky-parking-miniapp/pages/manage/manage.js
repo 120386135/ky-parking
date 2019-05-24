@@ -6,17 +6,17 @@ Page({
    */
   data: {
     itemData: [{
-        no: '001',
+        id: '001',
         car_no: '贵·JPC873',       
         date: '2019-5-17',
       },
       {
-        no: '001',
+        id: '001',
         car_no: '贵·JPC873',     
         date: '2019-5-17',
       },
       {
-        no: '001',
+        id: '001',
         car_no: '贵·JPC873',
         date: '2019-5-17',
       },
@@ -53,6 +53,43 @@ Page({
    */
   onLoad: function(options) {
 
+  },
+  updata:function(e){
+    var id = e.target.dataset.id;
+    console.log("id == " + id);
+    wx.request({
+      // url: '',
+      data: {
+        id: id
+      },
+      header: 'application/json',
+      method: 'GET',
+      success: function (res) {
+        console.log(res);
+        wx.navigateTo({
+          url: '../updata/updata',
+        })
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  onDel:function(e){
+    var id = e.target.dataset.id;
+    console.log("id == "+id);
+    wx.request({
+      // url: '',
+      data: {
+        id:id
+      },
+      header: 'application/json',
+      method: 'GET',
+      success: function(res) {
+        console.log(res);
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
 
   /**

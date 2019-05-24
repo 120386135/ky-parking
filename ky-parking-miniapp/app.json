@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/appointment/appointment",
     "pages/map/map",
-    "pages/manage/manage"
+    "pages/manage/manage",
+    "pages/updata/updata"
   ],
   "window": {
     "backgroundTextStyle": "light",

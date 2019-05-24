@@ -15,14 +15,14 @@ App({
           wx.request({
             url: 'http://localhost:8080/wx/login',
             data: {
-              code: res.code
+              code: res.codes
             },
             method: 'GET',
             dataType: 'json',
             success: function (res) {
               console.log(res);
-              var da_data = ;
-              let open_id = da_data.openId;
+              var da_data = res.data.data;
+              // let open_id = da_data.openId;
               console.log("aaaa" + da_data);
             }
           })

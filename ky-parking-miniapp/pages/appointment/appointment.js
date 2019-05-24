@@ -16,17 +16,21 @@ Page({
   bindDateChange: function (e) {
     console.log(e.detail.value)
     this.setData({
-      dates: e.detail.value
+      date: e.detail.value
     })
   },
   formSubmit: function (e) {
-    console.log(e.detail.value.name);
+    console.log(e.detail.value.name, e.detail.value.tel, e.detail.value.date, e.detail.value.car_no, e.detail.value.remark);
       wx.request({
         url: "",
         data: {
-          "id": e.detail.value.id,
+          'open_id':open_id,
           'name': e.detail.value.name,
           'tel': e.detail.value.tel,
+          'parking_time': e.detail.value.date,
+          'car_no': e.detail.value.car_no,
+          'remark':e.detail.value.remark
+
       
         },
         method: 'GET',
