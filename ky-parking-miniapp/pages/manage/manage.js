@@ -7,16 +7,19 @@ Page({
   data: {
     itemData: [{
         id: '001',
+      parking_no:'1号停车场',
         car_no: '贵·JPC873',       
         date: '2019-5-17',
       },
       {
         id: '001',
+        parking_no: '4号停车场',
         car_no: '贵·JPC873',     
         date: '2019-5-17',
       },
       {
         id: '001',
+        parking_no: '2号停车场',
         car_no: '贵·JPC873',
         date: '2019-5-17',
       },
@@ -55,24 +58,24 @@ Page({
 
   },
   updata:function(e){
-    var id = e.target.dataset.id;
-    console.log("id == " + id);
-    wx.request({
-      // url: '',
-      data: {
-        id: id
-      },
-      header: 'application/json',
-      method: 'GET',
-      success: function (res) {
-        console.log(res);
+    // var id = e.target.dataset.id;
+    // console.log("id == " + id);
+    // wx.request({
+    //   // url: '',
+    //   data: {
+    //     id: id
+    //   },
+    //   header: 'application/json',
+    //   method: 'GET',
+    //   success: function (res) {
+    //     console.log(res);
         wx.navigateTo({
           url: '../updata/updata',
         })
-      },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
+      // },
+      // fail: function (res) { },
+      // complete: function (res) { },
+    // })
   },
   onDel:function(e){
     var id = e.target.dataset.id;

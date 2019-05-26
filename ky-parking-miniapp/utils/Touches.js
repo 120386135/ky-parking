@@ -46,7 +46,7 @@ class Touches {
 
         if (disX < 0) {  // 判断滑动方向， （向左滑动）
             // 滑动的距离大于删除宽度的一半就显示操作列表 否则不显示
-            Math.abs(disX) > width / 2 ? left = -width : left = 0
+            Math.abs(disX) > width / 5 ? left = -width : left = 0
         } else {  // 向右滑动复位
             left = 0
         }

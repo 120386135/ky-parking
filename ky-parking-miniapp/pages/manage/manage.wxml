@@ -4,6 +4,7 @@
       <view class="item-info" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="left:{{item.left + 'rpx'}}" data-id="{{index}}">
         <view class="info-wrapper">
           <text class="name">{{item.car_no}}</text>
+           <text class="info-content">{{item.parking_no}}</text>
           <text class="info-content">{{item.date}}</text>
         </view>
       </view>
