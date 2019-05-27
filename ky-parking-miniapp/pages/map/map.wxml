@@ -1,2 +1,36 @@
-  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: {{view.Height}}px;"></map>
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="showDialogBtn" polyline="{{polyline}}"
+  show-location style="width: 100%; height: {{view.Height}}px;" include-points="{{markers}}"></map>
+<cover-view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" wx:for="{{markers}}" ></cover-view>
 
+<cover-view class="modal-dialog" wx:if="{{showModal}}" data-id='{{markers.id}}'>
+
+  <cover-view class="modal-content">
+
+    <cover-view class="table">
+
+      <cover-view class="tr">
+
+        <cover-view class="th">实验楼地下停车区域</cover-view>
+<!-- 
+        <cover-view class="th">维护员</cover-view>
+
+        <cover-view class="th">管理员</cover-view> -->
+
+      </cover-view>
+
+      <cover-view class="tr">
+        <cover-view class='td'><cover-image src="/images/parkingimg/P_1.JPG"></cover-image></cover-view>
+
+        <!-- <cover-view class='td'>1</cover-view>
+
+        <cover-view class='td'>1</cover-view>
+
+        <cover-view class='td'>1</cover-view> -->
+
+      </cover-view>
+
+    </cover-view>
+
+  </cover-view>
+
+</cover-view>
