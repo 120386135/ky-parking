@@ -24,13 +24,14 @@ color: #fff;
 
 .modal-dialog {
 
-width: 90%;
+width: 100%;
 
 overflow: hidden;
 
 position: fixed;
 
-top: 50%;
+/* top: 30%; */
+bottom: 0%;
 
 left: 0;
 
@@ -38,9 +39,11 @@ z-index: 9999;
 
 background: #fff;
 
-margin: -180rpx 55rpx;
+/* margin: -180rpx 55rpx; */
+margin: 0 auto;
 
-border-radius: 36rpx;
+ border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
 
 }
 

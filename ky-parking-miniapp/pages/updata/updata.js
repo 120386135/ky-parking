@@ -5,6 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    post:[{
+      username:"张三",
+      tel:"18224495161",
+      date:"2019-5-28",
+      car_no:"贵·A88888"
+    }]
 
   },
 
@@ -12,6 +18,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      var thit=this;
+      thit.setData({
+        post: options.post
+      })
 
   },
 
