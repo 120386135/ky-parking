@@ -1,7 +1,11 @@
 //app.js
 import Touches from './utils/Touches.js'
+
 App({
-  onLaunch: function () {
+  host: {
+    url: "http://127.0.0.1:8080/wx/"
+  },
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -9,7 +13,7 @@ App({
 
     // 登录
     wx.login({
-      success: function (res) {
+      success: function(res) {
         if (res.code) {
           console.log(res.code);
           wx.request({
@@ -19,16 +23,14 @@ App({
             },
             method: 'GET',
             dataType: 'json',
-            success: function (res) {
+            success: function(res) {
               console.log(res);
-              var da_data = res.data.data;
-              // let open_id = da_data.openId;
-              console.log("aaaa" + da_data);
+              var open_id = res.data;
+              wx.setStorageSync('open_id', open_id);
             }
           })
         }
       }
-    
     })
     // 获取用户信息
     wx.getSetting({

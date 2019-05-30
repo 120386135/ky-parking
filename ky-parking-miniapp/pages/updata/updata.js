@@ -1,4 +1,5 @@
 // pages/updata/updata.js
+const App = getApp()
 Page({
 
   /**
@@ -19,10 +20,62 @@ Page({
    */
   onLoad: function (options) {
       var thit=this;
-      thit.setData({
-        post: options.post
-      })
+      var id = options.id;
+    wx.request({
+      url: App.host.url + 'apinfo/',
+      method: "GET",
+      data: {
+        id: id
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data);
+        thit.setData({
+          post: res.data.data
+        })
+      }
+    })
+  },
+  formSubmit: function (e) {
+    console.log(e.detail.value.name, e.detail.value.tel, e.detail.value.date, e.detail.value.car_no, e.detail.value.remark);
+    wx.request({
+      url: App.host.url + 'updataParking/',
+      data: {
+        'id': e.detail.value.id,
+        'name': e.detail.value.name,
+        'tel': e.detail.value.tel,
+        'parking_time': e.detail.value.date,
+        'car_no': e.detail.value.car_no,
+        'remark': e.detail.value.remark
+      },
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(e.detail.value.name);
+        var code = res.data.code;
+        if (code == 0) {
+          wx.showToast({
+            title: '修改成功',
+            icon: 'loading',
+            duration: 3000
+          })
+          wx.redirectTo({
+            url: '../manage/manage',
+          })
+        } else {
+          wx.showToast({
+            title: '修改失败',
+            icon: 'loading',
+            duration: 3000
+          })
+        }
 
+      },
+    })
   },
 
   /**

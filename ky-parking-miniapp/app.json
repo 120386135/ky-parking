@@ -4,7 +4,8 @@
     "pages/appointment/appointment",
     "pages/map/map",
     "pages/manage/manage",
-    "pages/updata/updata"
+    "pages/updata/updata",
+    "pages/about/about"
   ],
 "permission":{
 "scope.userLocation":{

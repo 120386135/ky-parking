@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const App = getApp()
 
 Page({
   data: {
@@ -34,15 +34,16 @@ Page({
   //   })
   // },
   onLoad: function() {
-    if (app.globalData.userInfo) {
+    var _this=this;
+    if (App.globalData.userInfo) {
       this.setData({
-        userInfo: app.globalData.userInfo,
+        userInfo: App.globalData.userInfo,
         hasUserInfo: true
       })
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
+      App.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -59,7 +60,28 @@ Page({
           })
         }
       })
-    }
+    } 
+    wx.request({
+      url: App.host.url + "",
+      method: "GET",
+      data: {
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data);
+        _this.setData({
+          img:res.data.img,
+          post: res.data.data
+        })
+      }
+    })
+  },
+  about:function(e){
+    wx.navigateTo({
+      url: '../about/about',
+    })
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo

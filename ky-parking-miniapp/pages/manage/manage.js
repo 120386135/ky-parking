@@ -55,27 +55,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var open_id = wx.getStorageSync('open_id');
+    wx.request({
+      url: App.host.url + "appointment/",
+      method: "GET",
+      data: {
+        'open_id': open_id
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data);
+        this.setData({
+          post: res.data.data
+        })
+      }
+    })
 
   },
   updata:function(e){
-    // var id = e.target.dataset.id;
-    // console.log("id == " + id);
-    // wx.request({
-    //   // url: '',
-    //   data: {
-    //     id: id
-    //   },
-    //   header: 'application/json',
-    //   method: 'GET',
-    //   success: function (res) {
-    //     console.log(res);
-        wx.navigateTo({
-          url: '../updata/updata',
-        })
-      // },
-      // fail: function (res) { },
-      // complete: function (res) { },
-    // })
+    var id = e.target.dataset.id;
+    console.log("id == " + id);
+    wx.navigateTo({
+      url: '../updata/updata?id=' + id,
+    })
   },
   onDel: function (e) {//从绑定的控件列的data-id传过来
     var id = e.target.dataset.id;
@@ -90,7 +94,7 @@ Page({
       success: function (res) {
         if (res.confirm) {
           wx.request({
-            // url: app.host.url + "delCustomerInfo", //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
+            url: app.host.url + "cancelParking/", //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
             method: "GET",
             data: {
               id: id,

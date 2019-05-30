@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
 
   /**
@@ -22,7 +23,7 @@ Page({
   formSubmit: function(e) {
     console.log(e.detail.value.name, e.detail.value.tel, e.detail.value.date, e.detail.value.car_no, e.detail.value.remark);
     wx.request({
-      url: "",
+      url: app.host.url + '/appointment/',
       data: {
         'open_id': open_id,
         'name': e.detail.value.name,
@@ -38,9 +39,18 @@ Page({
       success: function(res) {
         console.log(e.detail.value.name);
         var code = res.data.code;
-        wx.redirectTo({
-          url: '../manage/manage',
-        })
+        if(code == 0){
+          wx.redirectTo({
+            url: '../manage/manage',
+          })
+        } else{
+          wx.showToast({
+            title: '预约成功',
+            icon: 'loading',
+            duration: 3000
+          })
+        }
+       
       },
     })
   },

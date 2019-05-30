@@ -4,17 +4,20 @@
     <text class='word-a'>今日剩余车位：</text>
     <view class='surplus-box'>
       <view class='number'>
+      <!-- 这里的停车位数量暂时先用静态image -->
         <view class='number-img'>
           <image src='../../images/surplus/s-1.png'></image>
+          <!-- <image src='{{img.img_1}}'></image> -->
         </view>
         <view class='number-img'>
           <image src='../../images/surplus/s-3.png'></image>
+          <!-- <image src='{{img.img_2}}'></image> -->
         </view>
         <view class='number-img'>
           <image src='../../images/surplus/s-2.png'></image>
+          <!-- <image src='{{img.img_3}}'></image> -->
         </view>
       </view>
-      <!-- <view class='liang'>(辆)</view> -->
     </view>
   </view>
   <view class="userinfo-box">
@@ -40,12 +43,15 @@
     <view class='line-css'></view>
     <text class='title-word'>停车公告</text>
     <view class='line-css'></view>
-  </view> 
-    <view class="poster-container">
-      <text class="poster-content">由于校园下周举行大型活动，请进入学校的车辆按规定停放，以免发生交通事故。</text>
-      <text class='date'>2019-5-13</text>
-    </view>
-  <view class='bottom-box'>
+  </view>
+  <view class="poster-container">
+  <!-- 这里暂时使用死数据 -->
+    <text class="poster-content">由于校园下周举行大型活动，请进入学校的车辆按规定停放，以免发生交通事故。</text>
+     <!-- <text class="poster-content">{{post.content}}</text> -->
+    <text class='date'>2019-5-13</text>
+    <!-- <text class='date'>{{post.date}}</text> -->
+  </view>
+  <view class='bottom-box' bindtap='about'>
     <text class='word-bottom'>关于凯院 · Parking</text>
   </view>
 </view>

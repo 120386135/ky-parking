@@ -3,6 +3,7 @@
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class='input-box'>
       <text>姓名:</text>
+      <input style='display:none' data-value='{{id}}' name="id" value='{{post.id}}'></input>
       <input class='input-content' placeholder-class="placeholderStyle" placeholder="请输入姓名(必填)" type="text" data-value='{{username}}' name="username" confirm-type="done" value='{{post.username}}'>{{post.username}}</input>
     </view>
     <view class='input-box'>
